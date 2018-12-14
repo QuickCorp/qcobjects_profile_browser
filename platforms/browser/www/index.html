@@ -17,7 +17,6 @@
 
 <component name="landscape_layout"></component>
 <component name="portrait_layout"></component>
-
   <script>
   function defaultFor(arg, val) { return typeof arg !== 'undefined' ? arg : val; }
   var mobile_sidebar_list,desktop_sidebar_list;
@@ -41,7 +40,7 @@
   	body = New(MyOwnBody); // binds to body
 
 
-  	Class('MobileAccordionItem',Component,{
+  	Class('MobileAccordionItem',HTMLElement,{
   		template: '<li> \
                   <input type="radio" name="select" class="accordion-select"  /> \
                   <div class="accordion-title"> \
@@ -56,7 +55,8 @@
   		itemList:{}
   	});
 
-  	Class('DesktopSideMenuItem',Component,{
+  	Class('DesktopSideMenuItem',HTMLElement,{
+      cached:false,
   		template: '<li> \
                       <input type="radio" name="desktop_select" class="desktop_sidebar-select"  /> \
                       <div class="desktop_sidebar-title"> \

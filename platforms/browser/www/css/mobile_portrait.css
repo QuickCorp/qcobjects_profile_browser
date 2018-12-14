@@ -1,5 +1,5 @@
 /**
-* Mobile Friendly Version CSS3 
+* Mobile Friendly Version CSS3
 * Tested in Safari
 *
 * Author: Jean Machuca
@@ -9,6 +9,8 @@
 
 @charset "UTF-8";
 /* CSS Document */
+
+
 
 .accordion.mainmenu {
     font-family: Arial, Helvetica, sans-serif;
@@ -49,7 +51,7 @@
 }
 
 .mainmenu .accordion-title span {
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
     margin-left: 20px;
 }
 
@@ -58,7 +60,7 @@
     background-color: #c4c6ca;
 }
 
-.mainmenu .accordion-title span  {	
+.mainmenu .accordion-title span  {
     transform: rotate(0deg);
     -o-transform: rotate(0deg);
     -moz-transform: rotate(0deg);

@@ -13,8 +13,8 @@
 @charset "UTF-8";
 /* CSS Document */
 
-@import url("./desktop.css");
 @import url("./mobile_portrait.css");
+@import url("./desktop.css");
 
 @viewport{
     zoom: 1.0;
@@ -41,8 +41,7 @@
        screen and (aspect-ratio: 4/3) and (min-width:460px),
 	   screen and (aspect-ratio: 3/2) and (min-width:460px)
 	   {
-	   	#desktop_page{display:block;-webkit-animation: fadeIn 1.5s;
-    animation: fadeIn 1.5s;}
+	   	#desktop_page{display:block;-webkit-animation: fadeIn 1.5s;animation: fadeIn 1.5s;}
 	   }
 
 @media screen and (orientation:portrait),
@@ -53,7 +52,5 @@
        screen and (aspect-ratio: 3/4),
 	   screen and (aspect-ratio: 2/3)
 	   {
-	   	#mobile_portrait_page {display:block;-webkit-animation: fadeIn 1.5s;
-    animation: fadeIn 1.5s;}
-
+	   	#mobile_portrait_page {display:block;-webkit-animation: fadeIn 1.5s;animation: fadeIn 1.5s;}
 	   }

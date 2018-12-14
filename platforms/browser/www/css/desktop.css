@@ -1,5 +1,5 @@
 /**
-* Desktop Friendly Version CSS3 
+* Desktop Friendly Version CSS3
 * Tested in Safari, Chrome and Firefox browsers
 *
 * Author: Jean Machuca
@@ -25,7 +25,7 @@
 	background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-/*	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); */ /* IE6-9 */	
+/*	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); */ /* IE6-9 */
 
 }
 .desktop_sidebar > ul > li:hover {
