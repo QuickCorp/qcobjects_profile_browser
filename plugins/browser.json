@@ -1,0 +1,73 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "org.quickcorp.demoinformat"
+        }
+    }
+}
