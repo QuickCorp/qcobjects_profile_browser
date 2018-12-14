@@ -13,8 +13,8 @@
 @charset "UTF-8";
 /* CSS Document */
 
-@import url("desktop.css");
-@import url("mobile_portrait.css");
+@import url("./desktop.css");
+@import url("./mobile_portrait.css");
 
 @viewport{
     zoom: 1.0;
