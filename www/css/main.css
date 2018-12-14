@@ -1,0 +1,59 @@
+/**
+* CSS3 Stylesheet for Profile Browser
+*
+* This code select the appropiate div to enable mobile or desktop friendly styles
+*
+* Tested in Safari, Chrome and Firefox browsers
+*
+* Author: Jean Machuca
+* Copyright (c) 2016
+*
+*/
+
+@charset "UTF-8";
+/* CSS Document */
+
+@import url("desktop.css");
+@import url("mobile_portrait.css");
+
+@viewport{
+    zoom: 1.0;
+    width: extend-to-zoom;
+}
+
+#mobile_portrait_page {display:none;}
+#mobile_landscape_page {display:none;}
+#desktop_page {display:none;}
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+@media screen and (orientation:landscape) and (min-width:460px),
+	   screen and (aspect-ratio: 16/9) and (min-width:460px),
+       screen and (aspect-ratio: 16/10) and (min-width:460px),
+       screen and (aspect-ratio: 8/5) and (min-width:460px),
+       screen and (aspect-ratio: 4/3) and (min-width:460px),
+	   screen and (aspect-ratio: 3/2) and (min-width:460px)
+	   {
+	   	#desktop_page{display:block;-webkit-animation: fadeIn 1.5s;
+    animation: fadeIn 1.5s;}
+	   }
+
+@media screen and (orientation:portrait),
+	   screen and (max-width:460px),
+       screen and (aspect-ratio: 9/16),
+       screen and (aspect-ratio: 10/16),
+       screen and (aspect-ratio: 5/8),
+       screen and (aspect-ratio: 3/4),
+	   screen and (aspect-ratio: 2/3)
+	   {
+	   	#mobile_portrait_page {display:block;-webkit-animation: fadeIn 1.5s;
+    animation: fadeIn 1.5s;}
+
+	   }
