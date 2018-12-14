@@ -12,7 +12,7 @@
 
 Import('data');  // Import data.js
 
-Package('nz.co.cucumber.model',[
+Package('cl.quickcorp.model',[
 	Class('VO',Object,{
 		__new__:function (){
 			//TODO: Implement
