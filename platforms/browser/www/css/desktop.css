@@ -1,0 +1,110 @@
+/**
+* Desktop Friendly Version CSS3 
+* Tested in Safari, Chrome and Firefox browsers
+*
+* Author: Jean Machuca
+* Copyright (c) 2016
+*
+*/
+
+@charset "UTF-8";
+/* CSS Document */
+.desktop_container {width:80%;margin:0 auto;}
+.desktop_sidebar{
+	float:left;width:30%;height:100%;border:rgba(0,0,0,1.00) solid 1px;
+	border-radius: 7px 0px 0px 7px;
+}
+.desktop_content{position:relative;
+	float:left;width:60%;height:100%;border:rgba(0,0,0,1.00) solid 0px;
+}
+
+
+.desktop_sidebar > ul > li {
+/*    background-color: rgb(206,206,206); */
+	background: #e2e2e2; /* Old browsers */
+	background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%,#fefefe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+/*	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); */ /* IE6-9 */	
+
+}
+.desktop_sidebar > ul > li:hover {
+    background: white;width:101%;
+
+}
+
+.desktop_profile_content{display:none;position: fixed;float:left;
+top:120px;
+left:40%;}
+
+.desktop_sidebar-select:checked ~ .desktop_profile_content {
+    display:block;
+
+}
+
+
+/* core slider. */
+
+
+.desktop_sidebar {
+    overflow: hidden;
+}
+.desktop_sidebar > ul {
+    margin: -1px;
+    padding: 1px;
+    list-style: none;
+    width: 101%;
+}
+
+.desktop_sidebar > ul > li,
+.desktop_sidebar-title {
+    position: relative;
+	float:none;
+
+}
+
+.desktop_sidebar-select {
+    cursor: pointer;
+/*    position: absolute; */
+    opacity: 0;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 1;
+	width:100%;
+}
+
+.desktop_sidebar-title span {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+}
+.desktop_sidebar-content {
+    position: absolute;
+    overflow: auto;
+
+}
+
+.desktop_sidebar-separator {
+    transition: margin 0.3s ease 0.1s;
+    -o-transition: margin 0.3s ease 0.1s;
+    -moz-transition: margin 0.3s ease 0.1s;
+    -webkit-transition: margin 0.3s ease 0.1s;
+}
+
+.profile_picture {
+    float: left;
+    margin: 0 20px 20px 0;
+    width: 150px;
+    height: auto;
+}
+
+desktop_profile_content > p {
+    text-align: justify;
+    text-indent: 2em;
+
+}
+
+.vertical-separator{position:fixed;
+		top:10%; left:34.35%;width:1px; height:450px; border:none; background:rgba(0,0,0,1.00);
+	}

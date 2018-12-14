@@ -7,34 +7,20 @@
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
      <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
      <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: https://ssl.gstatic.com; img-src * 'self' data:; child-src *; style-src * 'self' 'unsafe-inline' 'unsafe-eval'; script-src * 'self' 'unsafe-inline' 'unsafe-eval'; connect-src * 'self' 'unsafe-inline' 'unsafe-eval';media-src *">
-  <title>Foundation | Welcome</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-prototype.min.css">
-  <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
+  <title>QCObjects Profile Browser</title>
   <script type="text/javascript" src="https://quickcorp.github.io/QCObjects/QCObjects.js"></script>
+  <link rel="stylesheet" href="css/main.css"/>
 
 </head>
 
 <body>
 
+<component name="landscape_layout"></component>
+<component name="portrait_layout"></component>
 
-  <component name="title_bar"></component>
-  <component name="top_bar"></component>
-  <component name="orbit"></component>
-
-  <br>
-  <div class="text-center">
-    <h2>Our Newest Products</h2>
-    <hr>
-  </div>
-  <component name="gridcontainer"></component>
-  <br>
-  <component name="pagefooter" componentClass="FooterComponent" controllerClass="FooterController"></component>
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
   <script>
+  function defaultFor(arg, val) { return typeof arg !== 'undefined' ? arg : val; }
+  var mobile_sidebar_list,desktop_sidebar_list;
 
   CONFIG.set('relativeImportPath','js/packages/');
   CONFIG.set('componentsBasePath','templates/components/');
@@ -45,9 +31,87 @@
    */
   Import('cl.quickcorp',function (){
 
+    /**
+  	 * Super Container MyOwnBody
+  	 */
+  	Class('MyOwnBody',Object,{
+  		customAttr:'custom',
+  		body:document.body  // breakes default body element and replace with them
+  	});
+  	body = New(MyOwnBody); // binds to body
+
+
+  	Class('MobileAccordionItem',Component,{
+  		template: '<li> \
+                  <input type="radio" name="select" class="accordion-select"  /> \
+                  <div class="accordion-title"> \
+                      <span>{{firstName}} {{lastName}}</span> \
+                  </div> \
+                  <div class="accordion-content"> \
+  					<h2 class="profile_title">{{firstName}} {{lastName}}</h2> \
+  					<div class="profile_bio"><img src="{{picture}}" class="profile_picture" /><p>{{bio}}</p></div> \
+                  </div> \
+                  <div class="accordion-separator"></div> \
+              </li>',
+  		itemList:{}
+  	});
+
+  	Class('DesktopSideMenuItem',Component,{
+  		template: '<li> \
+                      <input type="radio" name="desktop_select" class="desktop_sidebar-select"  /> \
+                      <div class="desktop_sidebar-title"> \
+                          <span>{{firstName}} {{lastName}}</span> \
+                      </div> \
+                      <div class="desktop_profile_content"> \
+  						<img src="{{picture}}" class="profile_picture" /> \
+  						<h2 class="profile_title">{{firstName}} {{lastName}}</h2> \
+  						<div class="profile_bio"><p>{{bio}}</p></div> \
+  					</div> \
+                  </li>',
+  		itemList:{}
+  	});
+
+
+  	Class('MySideBar',Object,{
+  		addItem: function (itemMenu) {
+  			var customHTML = itemMenu.template;
+  			for (i1 in itemMenu.itemList){
+  				customHTML = customHTML.replace(new RegExp('{{'+i1+'}}', 'g'),itemMenu.itemList[i1]); // apply the values in the template
+  			}
+  			this['body'].innerHTML += customHTML; //Adding the item to the body of the sidebar
+  		}
+  	});
+
   });
 
   Ready(function (){
+    document.addEventListener('componentsloaded',function (e){
+      console.log('all components loaded');
+
+
+      	mobile_sidebar_list = Tag('#mobile_sidebar_list')[0].Cast(MySideBar); // cast any javascript dom object to QC_Object class
+      	desktop_sidebar_list = Tag('#desktop_sidemenu')[0].Cast(MySideBar); // cast any javascript dom object to QC_Object class
+
+
+      	// Adding options to  Sidebar Menu
+      		var dataVO = New(DataVO);
+      		var list = dataVO.list();
+      		for (d in list) {
+
+      			//Generating Mobile Items
+      			var mobile_item = New(MobileAccordionItem);
+      			mobile_item.itemList = list[d];
+      			mobile_sidebar_list.addItem(mobile_item);
+
+      			//Generating Desktop Items
+      			var desktop_item = New(DesktopSideMenuItem);
+      			desktop_item.itemList = list[d];
+      			desktop_sidebar_list.addItem(desktop_item);
+
+
+      		}
+
+    });
 
 
   });

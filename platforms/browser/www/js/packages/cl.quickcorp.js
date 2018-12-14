@@ -1,10 +1,8 @@
+"use strict";
+Import('cl.quickcorp.service');
+Import('cl.quickcorp.controller');
+Import('cl.quickcorp.model');
+
 Package('cl.quickcorp',[
-  Class('FooterController',Object,{
-    done:function (){
-      $(document).foundation();
-    }
-  }),
-  Class('FooterComponent',Component,{
-  })
 ]);
 var FOOTER;

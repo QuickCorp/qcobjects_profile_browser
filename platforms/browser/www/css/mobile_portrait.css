@@ -1,0 +1,130 @@
+/**
+* Mobile Friendly Version CSS3 
+* Tested in Safari
+*
+* Author: Jean Machuca
+* Copyright (c) 2016
+*
+*/
+
+@charset "UTF-8";
+/* CSS Document */
+
+.accordion.mainmenu {
+    font-family: Arial, Helvetica, sans-serif;
+    border-color: #505050;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0px;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.accordion.mainmenu > ul > li,
+.mainmenu .accordion-title,
+.mainmenu .accordion-content,
+.mainmenu .accordion-separator {
+    float: none;
+}
+
+.accordion.mainmenu > ul > li {
+    background-color: #1f1f1f;
+    margin-right: -0px;
+    margin-bottom: -400px;
+}
+
+.mainmenu .accordion-select:checked ~ .accordion-separator {
+    margin-right: 0px;
+    margin-bottom: 400px;
+}
+
+.mainmenu .accordion-title,
+.mainmenu .accordion-select  {
+    background-color: #c4c6ca;
+    color: #000000;
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+}
+
+.mainmenu .accordion-title span {
+    margin-bottom: 20px; 
+    margin-left: 20px;
+}
+
+.mainmenu .accordion-select:hover ~ .accordion-title,
+.mainmenu .accordion-select:checked ~ .accordion-title {
+    background-color: #c4c6ca;
+}
+
+.mainmenu .accordion-title span  {	
+    transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -ms-writing-mode: lr-tb;
+    margin-bottom: 0px;
+    line-height: 40px;
+}
+
+.mainmenu .accordion-content {
+    background-color: #fffefe;
+    color: #030303;
+    height: 348px;
+    width: 100%;
+    padding: 26px;
+}
+
+.mainmenu .accordion-title,
+.mainmenu .accordion-select:checked ~ .accordion-content {
+    margin-right: 1px;
+    margin-bottom: 1px;
+}
+
+/* core slider. */
+.accordion {
+    overflow: hidden;
+}
+
+.accordion > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 101%;
+}
+
+.accordion > ul > li,
+.accordion-title {
+    position: relative;
+}
+
+.accordion-select {
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 1;
+}
+
+.accordion-title span {
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.accordion-content {
+    position: relative;
+    overflow: auto;
+}
+
+.accordion-separator {
+    transition: margin 0.3s ease 0.1s;
+    -o-transition: margin 0.3s ease 0.1s;
+    -moz-transition: margin 0.3s ease 0.1s;
+    -webkit-transition: margin 0.3s ease 0.1s;
+}
