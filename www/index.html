@@ -96,23 +96,12 @@
       	// Adding options to  Sidebar Menu
       		var dataVO = New(DataVO);
       		var list = dataVO.list();
-      		for (d in list) {
 
-      			//Generating Mobile Items
-      			var mobile_item = New(MobileAccordionItem);
-      			mobile_item.itemList = list[d];
-      			mobile_sidebar_list.addItem(mobile_item);
+          document.addEventListener('firstDataListElementLoaded',function (e){
+            Tag('.desktop_sidebar-select')[0].setAttribute('checked',true);
+            Tag('.accordion-select')[0].setAttribute('checked',true);
+          });
 
-      			//Generating Desktop Items
-      			var desktop_item = New(DesktopSideMenuItem);
-      			desktop_item.itemList = list[d];
-      			desktop_sidebar_list.addItem(desktop_item);
-
-
-      		}
-
-          Tag('.desktop_sidebar-select')[0].setAttribute('checked',true);
-          Tag('.accordion-select')[0].setAttribute('checked',true);
 
 
     });
