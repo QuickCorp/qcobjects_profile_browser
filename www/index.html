@@ -9,7 +9,6 @@
      <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: https://ssl.gstatic.com; img-src * 'self' data:; child-src *; style-src * 'self' 'unsafe-inline' 'unsafe-eval'; script-src * 'self' 'unsafe-inline' 'unsafe-eval'; connect-src * 'self' 'unsafe-inline' 'unsafe-eval';media-src *">
   <title>QCObjects Profile Browser</title>
   <script type="text/javascript" src="https://quickcorp.github.io/QCObjects/QCObjects.js"></script>
-  <link rel="stylesheet" href="css/main.css"/>
 
 </head>
 
@@ -86,6 +85,7 @@
   });
 
   Ready(function (){
+    var css = New(SourceCSS,{url:'css/main.css'});
     document.addEventListener('componentsloaded',function (e){
       console.log('all components loaded');
 
