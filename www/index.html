@@ -20,6 +20,7 @@
   function defaultFor(arg, val) { return typeof arg !== 'undefined' ? arg : val; }
   var mobile_sidebar_list,desktop_sidebar_list;
 
+  CONFIG.set('secureObjects', false);
   CONFIG.set('relativeImportPath','js/packages/');
   CONFIG.set('componentsBasePath','templates/components/');
   CONFIG.set('delayForReady',5); // delay to wait before executing the first ready event, it includes imports
